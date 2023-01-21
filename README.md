@@ -1,12 +1,6 @@
 # Audible Bookmarks
 Tools for easily extracting bookmarks and notes in note-friendly formatting.
 
-## Audible Bookmarks bookmarklets
-These are two useful bookmarklets which helps with the journey of extracting and saving audiobook bookmarks notes and clips from audible. This is tailored to use audible.co.uk so far, although can easily be adapted for other regions.
-
-These bookmarklets are quick and dirty - I am not an advanced JavaScript developer and it's hastily complied so far for just my use case and desired Markdown formatting - this may be expanded in future. If you have suggestions or code improvements, please do raise an issue or pull request so this can develop into something more robust and flexible for the needs of others.
-
-
 ### Audible Book to Player
 From the Audible book page to the web player for that book. This is equivalent to clicking "Play" on the page, with added convenience of it not opening in a new reduced window, allowing bookmarklets to still be available in the main browser window.
 
@@ -18,7 +12,7 @@ From the audible cloud player in browser for the audiobook needed, pause the pla
 
 NOTE! The default audible view for bookmark clips/note is from most recently created at the top to oldest at the bottom. Since bookmarks are typically created in order of listening, this also reverses the order of the notes from the page to a more sensible order.
 
-<a href="javascript:(function(){allBookmarks=[...document.querySelectorAll('.adblCpBookmarkArea:not(#adbl-cp-bookmark-list-row-\\{0\\}')].reverse(),allBookmarksFormatted='',allBookmarks.forEach((o=>{chapterAndTimeStamp=o.querySelector('.adblCpBookmarkPosition').innerText,bookmarkNoteText=o.querySelector('.adblCpBookmarkNote').innerText,bookmarkLinkAddress=o.querySelector('.adblCpBookmarkStart').href,formattedFullBookmarkNote='\''+bookmarkNoteText.trim()+'\'\r\n*'+chapterAndTimeStamp.trim()+' - [Bookmark Link]('+bookmarkLinkAddress+')*',bookmarkNoteText.trim().length>0&&(allBookmarksFormatted=allBookmarksFormatted+'\r\n\r\n'+formattedFullBookmarkNote)})),allBookmarks[0].focus(),navigator.clipboard.writeText(allBookmarksFormatted);})()">Audible Bookmarks</a> <- Drag this to bookmarks bar to use.
+<a href="javascript:(function()%7Bfunction()%7BallBookmarks%3D%5B...document.querySelectorAll('.adblCpBookmarkArea%3Anot(%23adbl-cp-bookmark-list-row-%5C%5C%7B0%5C%5C%7D')%5D.reverse()%2CallBookmarksFormatted%3D''%2CallBookmarks.forEach((o%3D%3E%7BchapterAndTimeStamp%3Do.querySelector('.adblCpBookmarkPosition').innerText%2CbookmarkNoteText%3Do.querySelector('.adblCpBookmarkNote').innerText%2CbookmarkLinkAddress%3Do.querySelector('.adblCpBookmarkStart').href%2CformattedFullBookmarkNote%3D'%5C''%2BbookmarkNoteText.trim()%2B'%5C'%5Cr%5Cn*'%2BchapterAndTimeStamp.trim()%2B'%20-%20%5BBookmark%20Link%5D('%2BbookmarkLinkAddress%2B')*'%2CbookmarkNoteText.trim().length%3E0%26%26(allBookmarksFormatted%3DallBookmarksFormatted%2B'%5Cr%5Cn%5Cr%5Cn'%2BformattedFullBookmarkNote)%7D))%2CallBookmarks%5B0%5D.focus()%2Cnavigator.clipboard.writeText(allBookmarksFormatted)%3B%7D)()%7D)()%3B">Audible Bookmarks </a> <- Drag this to bookmarks bar to use.
 
 **GitHub breaks the link for some reason - for now copy paste the below as a link for the bookmarklet**
 ```javascript
